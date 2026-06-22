@@ -1,6 +1,14 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://githubusercontent.com">
-  <source media="(prefers-color-scheme: light)" srcset="https://githubusercontent.com">
-  <img alt="snake" src="https://githubusercontent.com">
-  <a>AAAAAAAAAAAAA</a>
+  <source 
+    media="(prefers-color-scheme: dark)" 
+    srcset="https://raw.githubusercontent.com/ваш_username/ваш_repo/output/github-contribution-grid-snake-dark.svg"
+  >
+  <source 
+    media="(prefers-color-scheme: light)" 
+    srcset="https://raw.githubusercontent.com/ваш_username/ваш_repo/output/github-contribution-grid-snake.svg"
+  >
+  <img 
+    alt="snake" 
+    src="https://raw.githubusercontent.com/ваш_username/ваш_repo/output/github-contribution-grid-snake.svg"
+  >
 </picture>
