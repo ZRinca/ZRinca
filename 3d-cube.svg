@@ -1,17 +1,126 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="300" height="300">
-  <style>
-    .cube { animation: spin 4s linear infinite; transform-origin: 100px 100px; }
-    @keyframes spin { 100% { transform: rotateY(360deg) rotateX(360deg); } }
-  </style>
-  <g class="cube">
-    <!-- Передняя грань -->
-    <polygon points="50,50 150,50 150,150 50,150" fill="#4A90E2" opacity="0.8"/>
-    <!-- Задняя грань -->
-    <polygon points="90,30 190,30 190,130 90,130" fill="#50E3C2" opacity="0.8"/>
-    <!-- Соединительные линии для объема -->
-    <line x1="50" y1="50" x2="90" y2="30" stroke="black" stroke-width="2"/>
-    <line x1="150" y1="50" x2="190" y2="30" stroke="black" stroke-width="2"/>
-    <line x1="150" y1="150" x2="190" y2="130" stroke="black" stroke-width="2"/>
-    <line x1="50" y1="150" x2="90" y2="130" stroke="black" stroke-width="2"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="auto">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a1a"/>
+      <stop offset="100%" stop-color="#1a0a2e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="glowBig">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Фон -->
+  <rect width="800" height="400" fill="url(#bg)"/>
+
+  <!-- Мерцающие звёзды -->
+  <g>
+    <circle cx="50" cy="50" r="2" fill="white">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="150" cy="80" r="1.5" fill="white">
+      <animate attributeName="opacity" values="0.1;0.8;0.1" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="280" cy="30" r="2.5" fill="#aaccff">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="400" cy="60" r="1" fill="white">
+      <animate attributeName="opacity" values="0.2;0.9;0.2" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="550" cy="40" r="2" fill="#ffaaff">
+      <animate attributeName="opacity" values="0.1;0.7;0.1" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="680" cy="70" r="1.5" fill="white">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="760" cy="20" r="2" fill="#aaffcc">
+      <animate attributeName="opacity" values="0.3;0.9;0.3" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="90" cy="350" r="1.5" fill="white">
+      <animate attributeName="opacity" values="0.1;0.8;0.1" dur="2.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="220" cy="370" r="2" fill="#ffccaa">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="3.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="450" cy="340" r="1" fill="white">
+      <animate attributeName="opacity" values="0.1;0.6;0.1" dur="4.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="630" cy="360" r="2.5" fill="#aaccff">
+      <animate attributeName="opacity" values="0.2;0.9;0.2" dur="2.1s" repeatCount="indefinite"/>
+    </circle>
   </g>
+
+  <!-- Группа куба с перспективой -->
+  <g transform="translate(400,200)">
+    <g>
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="12s" repeatCount="indefinite"/>
+      <g>
+        <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="8s" repeatCount="indefinite"/>
+        <!-- Передняя грань -->
+        <polygon points="-80,-80 80,-80 80,80 -80,80" fill="rgba(0,150,255,0.35)" stroke="#00aaff" stroke-width="2" filter="url(#glow)"/>
+        <!-- Задняя грань (смещена) -->
+        <polygon points="-80,-80 0,-120 160,-120 80,-80" fill="rgba(255,0,200,0.3)" stroke="#ff00cc" stroke-width="2" filter="url(#glow)"/>
+        <!-- Правая грань -->
+        <polygon points="80,-80 160,-120 160,40 80,80" fill="rgba(0,255,200,0.3)" stroke="#00ffcc" stroke-width="2" filter="url(#glow)"/>
+        <!-- Нижняя грань -->
+        <polygon points="80,80 160,40 0,40 -80,80" fill="rgba(255,200,0,0.3)" stroke="#ffcc00" stroke-width="2" filter="url(#glow)"/>
+        <!-- Левая грань -->
+        <polygon points="-80,-80 0,-120 0,40 -80,80" fill="rgba(200,0,255,0.3)" stroke="#cc00ff" stroke-width="2" filter="url(#glow)"/>
+        <!-- Верхняя грань -->
+        <polygon points="0,-120 160,-120 160,40 0,40" fill="rgba(255,100,0,0.25)" stroke="#ff6600" stroke-width="2" filter="url(#glow)"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- Орбитальное кольцо 1 -->
+  <g>
+    <ellipse cx="400" cy="200" rx="220" ry="70" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <ellipse cx="400" cy="200" rx="220" ry="70" fill="none" stroke="#00aaff" stroke-width="2" stroke-dasharray="10 15" opacity="0.6">
+      <animateTransform attributeName="transform" type="rotate" from="0 400 200" to="360 400 200" dur="15s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+
+  <!-- Частицы на орбите 1 -->
+  <g>
+    <circle r="4" fill="#00aaff" filter="url(#glow)">
+      <animateMotion dur="15s" repeatCount="indefinite" path="M180,200 a220,70 0 1,1 440,0 a220,70 0 1,1 -440,0"/>
+    </circle>
+    <circle r="3" fill="#ff00cc" filter="url(#glow)">
+      <animateMotion dur="15s" repeatCount="indefinite" begin="3s" path="M180,200 a220,70 0 1,1 440,0 a220,70 0 1,1 -440,0"/>
+    </circle>
+    <circle r="5" fill="#00ffcc" filter="url(#glow)">
+      <animateMotion dur="15s" repeatCount="indefinite" begin="6s" path="M180,200 a220,70 0 1,1 440,0 a220,70 0 1,1 -440,0"/>
+    </circle>
+  </g>
+
+  <!-- Орбитальное кольцо 2 (противоположное вращение) -->
+  <g>
+    <ellipse cx="400" cy="200" rx="180" ry="90" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+    <ellipse cx="400" cy="200" rx="180" ry="90" fill="none" stroke="#ff00cc" stroke-width="1.5" stroke-dasharray="5 20" opacity="0.4">
+      <animateTransform attributeName="transform" type="rotate" from="0 400 200" to="-360 400 200" dur="20s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+
+  <!-- Неоновый текст -->
+  <text x="400" y="220" font-family="Arial, sans-serif" font-size="64" font-weight="bold" fill="white" text-anchor="middle" filter="url(#glowBig)">
+    <animate attributeName="opacity" from="0" to="1" begin="0.5s" dur="2s" fill="freeze"/>
+    <animate attributeName="opacity" values="1;0.8;1" dur="3s" repeatCount="indefinite"/>
+    ZRinca
+  </text>
+
+  <!-- Подпись -->
+  <text x="400" y="265" font-family="Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.6)" text-anchor="middle" letter-spacing="6">
+    <animate attributeName="opacity" from="0" to="0.6" begin="1.5s" dur="2s" fill="freeze"/>
+    ✦ Full Stack Developer ✦
+  </text>
 </svg>
