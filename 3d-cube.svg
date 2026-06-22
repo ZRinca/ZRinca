@@ -118,9 +118,9 @@
     ZRinca
   </text>
 
-  <!-- Подпись -->
+  <!-- Подпись хз пока не придумал -->
   <text x="400" y="265" font-family="Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.6)" text-anchor="middle" letter-spacing="6">
     <animate attributeName="opacity" from="0" to="0.6" begin="1.5s" dur="2s" fill="freeze"/>
-    ✦ Full Stack Developer ✦
+    ✦ --------------- ✦
   </text>
 </svg>
