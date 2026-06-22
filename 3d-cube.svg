@@ -1,3 +1,17 @@
-<div align="center">
-  <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400' width='100%' height='auto'><defs><linearGradient id='bg' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' stop-color='#0a0a1a'/><stop offset='100%' stop-color='#1a0a2e'/></linearGradient><linearGradient id='rainbow' x1='0%' y1='0%' x2='100%' y2='0%'><stop offset='0%' stop-color='#ff00cc'/><stop offset='33%' stop-color='#3333ff'/><stop offset='66%' stop-color='#00ffcc'/><stop offset='100%' stop-color='#ff00cc'/></linearGradient><filter id='glow'><feGaussianBlur stdDeviation='6' result='blur'/><feMerge><feMergeNode in='blur'/><feMergeNode in='SourceGraphic'/></feMerge></filter><filter id='glowSmall'><feGaussianBlur stdDeviation='3' result='blur'/><feMerge><feMergeNode in='blur'/><feMergeNode in='SourceGraphic'/></feMerge></filter></defs><rect width='800' height='400' fill='url(#bg)'/><!-- Орбитальное кольцо --><g><ellipse cx='400' cy='200' rx='250' ry='80' fill='none' stroke='rgba(255,255,255,0.1)' stroke-width='1'/><ellipse cx='400' cy='200' rx='250' ry='80' fill='none' stroke='url(#rainbow)' stroke-width='2' stroke-dasharray='8 12'><animateTransform attributeName='transform' type='rotate' from='0 400 200' to='360 400 200' dur='10s' repeatCount='indefinite'/></ellipse></g><!-- Частицы на орбите --><g><circle r='3' fill='white' filter='url(#glowSmall)'><animateMotion dur='10s' repeatCount='indefinite' path='M150,200 a250,80 0 1,1 500,0 a250,80 0 1,1 -500,0'/></circle><circle r='4' fill='#ff00cc' filter='url(#glowSmall)'><animateMotion dur='10s' repeatCount='indefinite' begin='2s' path='M150,200 a250,80 0 1,1 500,0 a250,80 0 1,1 -500,0'/></circle><circle r='3' fill='#00ffcc' filter='url(#glowSmall)'><animateMotion dur='10s' repeatCount='indefinite' begin='4s' path='M150,200 a250,80 0 1,1 500,0 a250,80 0 1,1 -500,0'/></circle><circle r='2' fill='white' filter='url(#glowSmall)'><animateMotion dur='10s' repeatCount='indefinite' begin='6s' path='M150,200 a250,80 0 1,1 500,0 a250,80 0 1,1 -500,0'/></circle></g><!-- Летящие линии --><line x1='-100' y1='50' x2='900' y2='350' stroke='rgba(255,0,200,0.2)' stroke-width='2'><animate attributeName='x1' values='-100;900' dur='4s' repeatCount='indefinite'/><animate attributeName='y1' values='50;350' dur='4s' repeatCount='indefinite'/></line><line x1='-100' y1='350' x2='900' y2='50' stroke='rgba(0,200,255,0.2)' stroke-width='2'><animate attributeName='x1' values='-100;900' dur='5s' repeatCount='indefinite'/><animate attributeName='y1' values='350;50' dur='5s' repeatCount='indefinite'/></line><!-- Основной текст --><text x='400' y='190' font-family='Arial, sans-serif' font-size='72' font-weight='bold' fill='url(#rainbow)' text-anchor='middle' filter='url(#glow)'><animate attributeName='opacity' values='0.7;1;0.7' dur='3s' repeatCount='indefinite'/>ZRinca</text><!-- Подпись --><text x='400' y='240' font-family='Arial, sans-serif' font-size='20' fill='rgba(255,255,255,0.7)' text-anchor='middle' letter-spacing='4'><animate attributeName='opacity' from='0' to='0.7' begin='1s' dur='2s' fill='freeze'/>✦ Full Stack Developer ✦</text></svg>" alt="Neon Banner" />
-</div>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="300" height="300">
+  <style>
+    .cube { animation: spin 4s linear infinite; transform-origin: 100px 100px; }
+    @keyframes spin { 100% { transform: rotateY(360deg) rotateX(360deg); } }
+  </style>
+  <g class="cube">
+    <!-- Передняя грань -->
+    <polygon points="50,50 150,50 150,150 50,150" fill="#4A90E2" opacity="0.8"/>
+    <!-- Задняя грань -->
+    <polygon points="90,30 190,30 190,130 90,130" fill="#50E3C2" opacity="0.8"/>
+    <!-- Соединительные линии для объема -->
+    <line x1="50" y1="50" x2="90" y2="30" stroke="black" stroke-width="2"/>
+    <line x1="150" y1="50" x2="190" y2="30" stroke="black" stroke-width="2"/>
+    <line x1="150" y1="150" x2="190" y2="130" stroke="black" stroke-width="2"/>
+    <line x1="50" y1="150" x2="90" y2="130" stroke="black" stroke-width="2"/>
+  </g>
+</svg>
