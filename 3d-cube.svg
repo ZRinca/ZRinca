@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="300" height="300">
+  <style>
+    .cube { animation: spin 4s linear infinite; transform-origin: 100px 100px; }
+    @keyframes spin { 100% { transform: rotateY(360deg) rotateX(360deg); } }
+  </style>
+  <g class="cube">
+    <!-- Передняя грань -->
+    <polygon points="50,50 150,50 150,150 50,150" fill="#4A90E2" opacity="0.8"/>
+    <!-- Задняя грань -->
+    <polygon points="90,30 190,30 190,130 90,130" fill="#50E3C2" opacity="0.8"/>
+    <!-- Соединительные линии для объема -->
+    <line x1="50" y1="50" x2="90" y2="30" stroke="black" stroke-width="2"/>
+    <line x1="150" y1="50" x2="190" y2="30" stroke="black" stroke-width="2"/>
+    <line x1="150" y1="150" x2="190" y2="130" stroke="black" stroke-width="2"/>
+    <line x1="50" y1="150" x2="90" y2="130" stroke="black" stroke-width="2"/>
+  </g>
+</svg>
