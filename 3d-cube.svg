@@ -115,7 +115,7 @@
   <text x="400" y="220" font-family="Arial, sans-serif" font-size="64" font-weight="bold" fill="white" text-anchor="middle" filter="url(#glowBig)">
     <animate attributeName="opacity" from="0" to="1" begin="0.5s" dur="2s" fill="freeze"/>
     <animate attributeName="opacity" values="1;0.8;1" dur="3s" repeatCount="indefinite"/>
-    ZRinca
+    ZRincs
   </text>
 
   <!-- Подпись хз пока не придумал -->
